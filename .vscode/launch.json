@@ -1,0 +1,125 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "THUNDERBIRDS ARE A GO GO",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200",
+        "sourceMaps": true,
+        "runtimeArgs": [
+          "--new-window",
+          "--remote-debugging-port=9222",
+          "--disable-session-crashed-bubble",
+          "--user-data-dir=C:\\temp\\chromeuserdata"],
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "Debug 4 Me",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200/",
+        //"port": 9222,
+        "runtimeExecutable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", //${env.USERPROFILE}/AppData/Local/Google/Chrome SxS/Application/chrome.exe",
+        "runtimeArgs": [
+          "--new-window",
+          "--remote-debugging-port=9222",
+          "--disable-session-crashed-bubble",
+          "--user-data-dir=c:\\temp\\chromeuserdata"
+        ], //"C:\Users\BoomJ\AppData\Local\Google\Chrome SxS\Application\chrome.exe" --remote-debugging-port=9222
+        "webRoot": "${workspaceRoot}/app/"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome",
+        "url": "http://localhost:4200",
+        "runtimeExecutable": "C:\\Users\\BoomJ\\AppData\\Local\\Google\\Chrome SxS\\Application\\chrome.exe",
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "1 Launch index.html with sourcemaps",
+        "type": "chrome",
+        "request": "launch",
+        "file": "${workspaceRoot}/index.html",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "2 Launch chrome with sourcemaps",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200/",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "3 Launch chrome ext with sourcemaps",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200/",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}",
+        "runtimeExecutable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "runtimeArgs": [
+          "--new-window",
+          "--user-data-dir=c:\\temp\\chromeuserdata",
+          "--disable-session-crashed-bubble"
+        ],
+        "port": 9222
+      },
+      {
+        "name": "4 Attach with sourcemaps",
+        "type": "chrome",
+        "request": "attach",
+        "port": 9222,
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "5 Launch Chrome against localhost, with sourcemaps",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:8080",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "6 chrome",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200/",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}",
+        "runtimeExecutable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "runtimeArgs": [
+          "--new-window",
+          "--user-data-dir=c:\\temp\\chromeuserdata",
+          "--disable-session-crashed-bubble"
+        ],
+        "port": 9222
+      },
+      {
+        "name": "7 Attach to Chrome, with sourcemaps",
+        "type": "chrome",
+        "request": "attach",
+        "port": 9222,
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
+      },
+      {
+        "name": "8 Canary",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200/",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}",
+        "runtimeExecutable": "C:\\Users\\BoomJ\\AppData\\Local\\Google\\Chrome SxS\\Application\\chrome.exe",
+        "runtimeArgs": [
+          "--user-data-dir=c:\\temp\\chromeuserdata",
+          "--disable-session-crashed-bubble"
+        ],
+        "port": 9222
+      }
+    ]
+  }

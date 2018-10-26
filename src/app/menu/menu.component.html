@@ -1,8 +1,11 @@
+<!-- <p-growl [(value)]="this.msgs"></> -->
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+<p-toast [style]="{marginTop: '80px'}" position="top-center" key="tc"></p-toast>
 <p-menubar [model]="this.items">
   <div>
-      <input type="text" pInputText placeholder="Search">
-      <button pButton label="Logout" icon="fa fa-sign-out" style="margin-left:.25em"></button>
-      <button pButton label="Login" icon="fa fa-sign-out" style="margin-left:.25em"></button>
-      <button pButton label="Dashboard" icon="fa fa-sign-out" style="margin-left:.25em"></button>
+    <button pButton label="Home" (click)="home()" icon="fa fa-home" style="margin-left:.25em"></button>
+    <input type="text" pInputText placeholder="Search">
+    <button pButton label="Logout" (click)="logout()" icon="fa fa-sign-out" style="margin-left:.25em"></button>
+    <button pButton label="Login" (click)="login()" icon="fa fa-sign-out" style="margin-left:.25em"></button>
   </div>
 </p-menubar>

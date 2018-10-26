@@ -1,0 +1,80 @@
+<div class="ui-g">
+        <div class="ui-g-12">
+                <button pButton type="button" label="Reset" (click)="reset($event)"></button>
+                
+          </div>
+    <div class="ui-g-12">
+        <p-table
+            #dt 
+            [columns]="cols"
+            [paginator]="true"
+            [value]="this.histories"
+            [lazy]="true"
+            (onLazyLoad)="onLazyLoad($event)"
+            [rows]="this.limit"
+            [totalRecords]="this.totalRecords"
+            [loading]="loading"
+            (onPage)=onPage($event)
+            [(first)]="this.first">
+            <ng-template pTemplate="caption">
+                {{ this.totalRecords }} History Records
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 3em"></th>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field" 
+                                ariaLabel="Activate to sort" 
+                                ariaLabelDesc="Activate to sort in descending order" 
+                                ariaLabelAsc="Activate to sort in ascending order">
+                            </p-sortIcon>
+                        </th>
+                    <!-- <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th> -->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+            <!-- <ng-template pTemplate="body" let-rowData let-columns="columns"> -->
+                <tr>
+                   <td>
+                       <a href="#" [pRowToggler]="rowData">
+                            <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                        </a>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+
+
+            <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                    <tr>
+                        <td [attr.colspan]="columns.length + 1">
+                            <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
+                                <div class="ui-g-12 ui-md-3" style="text-align:center">
+                                </div>
+                                <div class="ui-g-12 ui-md-9">
+                                    <div class="ui-g">
+                                        <div class="ui-g-12">
+                                            <b>Before:</b> {{rowData.Before}}
+                                        </div>
+                                        <div class="ui-g-12">
+                                            <b>After:</b> {{rowData.After}}
+                                        </div>
+                                        <div class="ui-g-12">
+                                        </div>
+                                        <div class="ui-g-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+        </p-table>
+    </div>
+</div>
+<button type="button" (click)="reset()" label="Reset"></button>

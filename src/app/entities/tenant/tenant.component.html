@@ -1,0 +1,45 @@
+<div class="ui-g">
+    <div class="ui-g-6">
+
+            <p-table [columns]="cols"
+            [value]="this.tenants" 
+            [lazy]="true" 
+            (onLazyLoad)="onLazyLoad($event)" 
+            [paginator]="true" 
+            [rows]="5"
+            [totalRecords]="this.totalRows">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+
+
+    </div>
+    <div class="ui-g-6">
+
+    </div>
+</div>
+
+<!-- <p-dataTable [value]="this.tenants$ | async"
+             [lazy]="true"
+             [rows]="10"
+             [paginator]="true"
+             [rowsPerPageOptions]="[5,10,20]"
+             [totalRecords]="(this.tenants$ | async)?.lenght"
+             (onLazyLoad)="loadLazy($event)">
+        <p-header>Tenants</p-header>
+        <p-column field="Name" header="Name"></p-column>
+        <p-column field="CustomerNumber" header="CustomerNumber"></p-column>
+    </p-dataTable> -->

@@ -1,0 +1,74 @@
+{{ (this.requestsViews$ | async) }}
+
+
+
+
+<!-- <p-table  [value]="this.requestsViews$ | async"
+          [lazy]="true"
+          [paginator]="true" 
+          [rows]="5" 
+          [totalRecords]="(this.requestsViews$ | async)?.length"
+          [rowsPerPageOptions]="[10,20,30]">
+    
+  <ng-template pTemplate="header">
+      <tr>
+          <th>TenantName</th>
+          <th>FileName</th>
+          <th>JobTypeName</th>
+          <th>ScenarioName</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-request>
+      <tr>
+          <td>{{request.TenantName}}</td>
+          <td>{{request.FileName}}</td>
+          <td>{{request.JobTypeName}}</td>
+          <td>{{request.ScenarioName}}</td>
+      </tr>
+  </ng-template>
+</p-table> -->
+
+
+
+
+<!-- <p-table  [value]="requests"
+          [lazy]="true"
+          (onLazyLoad)="loadLazy($event)"
+          [paginator]="true" 
+          [rows]="5" 
+          [totalRecords]="this.totalRecords"
+          [rowsPerPageOptions]="[10,20,30]" 
+          [loading]="loading">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>TenantName</th>
+          <th>FileName</th>
+          <th>JobTypeName</th>
+          <th>ScenarioName</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-request>
+      <tr>
+          <td>{{request.TenantName}}</td>
+          <td>{{request.FileName}}</td>
+          <td>{{request.JobTypeName}}</td>
+          <td>{{request.ScenarioName}}</td>
+      </tr>
+  </ng-template>
+</p-table> -->
+<!-- <p-paginator [rows]="20" [totalRecords]="(this.requestsViews$ | async)?.length" 
+[rowsPerPageOptions]="[10,20,30]"></p-paginator> -->
+
+
+
+<!-- 
+RequestID: number;
+CurrentStateID: number;
+CurrentState: string;
+TenantName: string;
+TenantID: number;
+FileName: string;
+DTAPState: string;
+JobTypeName: string;
+ScenarioName: string;
+DateTime: Date; -->

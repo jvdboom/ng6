@@ -1,0 +1,40 @@
+<p>
+  photo works!
+</p>
+
+<div class="ui-g">
+    <div class="ui-g-6">
+
+            <p-table [columns]="cols"
+            [value]="this.photos" 
+            [lazy]="true" 
+            (onLazyLoad)="onLazyLoad($event)" 
+            [paginator]="true" 
+            [rows]="10" 
+            [totalRecords]="this.totalRecords">
+            <ng-template pTemplate="caption">
+                {{ this.totalRecords }} Photos
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+
+
+    </div>
+    <div class="ui-g-6">
+
+    </div>
+</div>
