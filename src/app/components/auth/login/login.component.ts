@@ -22,20 +22,17 @@ export class LoginComponent implements OnInit {
   login2$: Observable<SimpleResult>;
 
   ngOnInit() {
-   
+    this.login();
   }
 
   login() {
     
       .subscribe((simpleResult: SimpleResult) => {
-        console.log(`simpleResult`, simpleResult);
         if (simpleResult && simpleResult.Key === "Error") {
-          this.messageService.add({ severity: "error", summary: simpleResult.Value, detail: simpleResult.Key });
+          this.messageService.add({ severity: "error", summary: simpleResult.Key, detail: simpleResult.Value });
           this.router.navigate(["/login"]);
         } else {
-          console.log(`login okay`, simpleResult);
-          this.messageService.add({ severity: "error", summary: simpleResult.Value, detail: simpleResult.Key });
-          // console.log(`"Login setItem("currentuser", simpleResult.Value)`, simpleResult);
+          this.messageService.add({ severity: "success", summary: `${simpleResult.Key} Logged in`, detail: simpleResult.Value });
           // localStorage.setItem("currentuser", simpleResult.Value);
         }
       });

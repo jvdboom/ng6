@@ -11,8 +11,8 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) { }
 
   intercept(aRequest: HttpRequest<any>, aNext: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(`AuthInterceptor`, aRequest);
-    console.log(localStorage.getItem("currentuser"));
+    // console.log(`AuthInterceptor`, aRequest);
+    // console.log(localStorage.getItem("currentuser"));
 
     // const cloneRequest = aRequest.clone({ headers: aRequest.headers.append("", "") });
     if (localStorage.getItem("currentuser")) {

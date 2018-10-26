@@ -45,13 +45,12 @@ export class AuthService {
       .pipe(
         shareReplay(),
         tap((simpleresult: SimpleResult) => {
-          console.log(`@@@001`, simpleresult);
-          console.log(`simpleresult.Value.split(";")[0]`, simpleresult.Value.split(";")[0]);
           localStorage.setItem("currentuser", simpleresult.Value.split(";")[0]);
           return simpleresult;
         })
       );
   }
+
 
   logout() {
     localStorage.removeItem("currentuser");
@@ -59,8 +58,6 @@ export class AuthService {
 
 
 }
-
-
 
 // public login01(aUser: string, aPassword: string) {
 //   console.log(`login01`, aUser);

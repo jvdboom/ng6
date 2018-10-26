@@ -14,8 +14,8 @@ export class ErrorInterceptor implements HttpInterceptor {
     private injector: Injector) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(`ErrorInterceptor`, request);
-    console.log(`ErrorInterceptor`, next);
+    // console.log(`ErrorInterceptor`, request);
+    // console.log(`ErrorInterceptor`, next);
     const messageService = this.injector.get(MessageService);
     return next.handle(request).pipe(catchError(err => {
       if (err.status === 0) { // Unknown Error

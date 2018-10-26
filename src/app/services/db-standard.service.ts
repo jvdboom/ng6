@@ -78,8 +78,6 @@ export class DBStandardService {
   // }
 
   getStoredProcedure<T>(aStoredProcedure: string, aParams: HttpParams): Observable<T> {
-    console.log(`@@ ${aStoredProcedure}`, aParams ? aParams.keys() : "No Keys");
-    console.log(`## ${aStoredProcedure}`, aParams ? aParams.toString() : "No Params");
     if (aStoredProcedure) {
       return this.http
         .get<T>(`${this.storedProcedureUrl}[${aStoredProcedure}]`, { params: aParams })
@@ -101,14 +99,14 @@ export class DBStandardService {
   getRows<T>(aTableName: string, aFilter: string = ""): Observable<T> {
     if (aTableName) {
       if (true) {
-        console.log(`getRows<T>("${aTableName}"${aFilter === "" ? ")" : `, "${aFilter}")`}`);
+        // console.log(`getRows<T>("${aTableName}"${aFilter === "" ? ")" : `, "${aFilter}")`}`);
       }
       const params = new HttpParams({ fromString: aFilter });
       return this.http
         .get<T>(`${this.dbStandardUrl}[${aTableName}]`, { params: params })
         .pipe(
           tap(result => {
-            console.log(`getRows<T>(${aTableName})=>`, result);
+            // console.log(`getRows<T>(${aTableName})=>`, result);
             if (result["Key"] === "Error") {
               return new Observable<T>();
             } else {
@@ -126,7 +124,7 @@ export class DBStandardService {
   getRowsObsolete(aTableName: string, aFilter: string = ""): Observable<any[]> {
     if (aTableName) {
       if (true) {
-        console.log(`getRows("${aTableName}"${aFilter === "" ? ")" : `, "${aFilter}")`}`);
+        // console.log(`getRows("${aTableName}"${aFilter === "" ? ")" : `, "${aFilter}")`}`);
       }
       const params = new HttpParams({ fromString: aFilter });
       return this.http
@@ -149,10 +147,10 @@ export class DBStandardService {
       // .pipe(shareReplay(),
       //   tap(res => {
       //     if (res && res[0] === "Error") {
-      //       console.log("1@@@@@@@@@@@@@@@@@@@@@@@@@@@", res[0]);
+      //       console.log("1", res[0]);
       //       return res;
       //     } else {
-      //       console.log("2@@@@@@@@@@@@@@@@@@@@@@@@@@@", res["Key"]);
+      //       console.log("2", res["Key"]);
       //       return res;
       //     }
       //   }));
@@ -171,7 +169,7 @@ export class DBStandardService {
         .get<T>(`${this.storedProcedureUrl}[${aStoredProcedureName}]`, { params: aParams })
         .pipe(
           tap(result => {
-            console.log(`getRowsStoredProcedure<T>(${aStoredProcedureName})=>`, result);
+            // console.log(`getRowsStoredProcedure<T>(${aStoredProcedureName})=>`, result);
             if (result["Key"] === "Error") {
               return new Observable<T>();
             } else {
