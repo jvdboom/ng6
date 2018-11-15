@@ -33,6 +33,7 @@ import { TableModule } from "primeng/table";
 import { DropdownModule } from "primeng/dropdown";
 import { PaginatorModule } from "primeng/paginator";
 import { RequestViewComponent } from "./views/request-view/request-view.component";
+import { BulkLoadComponent } from "./views/bulk-load/bulk-load.component";
 import { ErrorInterceptor } from "./services/error.interceptor";
 import { MessageService } from "primeng/api";
 import { MessagesModule } from "primeng/messages";
@@ -43,7 +44,7 @@ import { HistoryComponent } from "./entities/history/history.component";
 import { PhotoComponent } from "./entities/photo/photo.component";
 import { HistoryBigComponent } from "./entities/history-big/history-big.component";
 import { HistoryBiggerComponent } from "./entities/history-bigger/history-bigger.component";
-import { DemoComponent } from './components/demo/demo.component';
+import { DemoComponent } from "./components/demo/demo.component";
 // import "rxjs/add/operators";
 
 @NgModule({
@@ -58,6 +59,7 @@ import { DemoComponent } from './components/demo/demo.component';
     ProcessComponent,
     HistoryComponent,
     PhotoComponent,
+    BulkLoadComponent,
     HistoryBigComponent,
     HistoryBiggerComponent,
     DemoComponent

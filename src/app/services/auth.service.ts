@@ -40,6 +40,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public login(aUser: string, aPassword: string) {
+    console.log(`${this.authorizationUrl}login`, `{"user": "${btoa(aUser + DELIMITER + btoa(aPassword))}"}`);
     return this.http
       .post<SimpleResult>(`${this.authorizationUrl}login`, `{"user": "${btoa(aUser + DELIMITER + btoa(aPassword))}"}`)
       .pipe(

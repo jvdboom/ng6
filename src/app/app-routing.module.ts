@@ -11,12 +11,14 @@ import { PhotoComponent } from "./entities/photo/photo.component";
 import { HistoryBigComponent } from "./entities/history-big/history-big.component";
 import { HistoryBiggerComponent } from "./entities/history-bigger/history-bigger.component";
 import { DemoComponent } from "./components/demo/demo.component";
+import { BulkLoadComponent } from "./views/bulk-load/bulk-load.component";
 
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "tenant", component: TenantComponent },
+  { path: "bulkload", component: BulkLoadComponent },
   { path: "requestview", component: RequestViewComponent },
   { path: "countrycode", component: CountryCodeComponent },
   { path: "process", component: ProcessComponent },

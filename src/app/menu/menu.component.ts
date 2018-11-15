@@ -28,6 +28,8 @@ export class MenuComponent implements OnInit {
       {
         label: "Configuration",
         items: [
+          { label: "Bulkload", icon: "pi pi-fw pi-plus", routerLink: ["bulkload"] },
+          { label: "Request View", icon: "pi pi-fw pi-plus", routerLink: ["requestview"] },
           { label: "Photo", icon: "pi pi-fw pi-user", routerLink: ["photo"] },
           { label: "Demo", icon: "pi pi-fw pi-user", routerLink: ["demo"] },
           { label: "HistoryBigger", icon: "pi pi-fw pi-user", routerLink: ["historybigger"] },
@@ -35,7 +37,6 @@ export class MenuComponent implements OnInit {
           { label: "History", icon: "pi pi-fw pi-user", routerLink: ["history"] },
           { label: "Process", icon: "pi pi-fw pi-user", routerLink: ["process"] },
           { label: "Tenant", icon: "pi pi-fw pi-user", routerLink: ["tenant"] },
-          { label: "Request View", icon: "pi pi-fw pi-plus", routerLink: ["requestview"] },
           { label: "Country Code", icon: "pi pi-fw pi-plus", routerLink: ["countrycode"] },
         ]
       }

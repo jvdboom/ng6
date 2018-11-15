@@ -39,21 +39,21 @@ export class HistoryComponent implements OnInit, AfterViewInit {
 
     const initialParams: HttpParams = new HttpParams()
       .set("param1", "0", )
-      .set("param2", "50")
+      .set("param2", "100")
       .set("param3", this.lastSortField)
       .set("param4", this.lastSortOrder.toString());
     this.loadhistoriesSource(initialParams);
-    this.dbStandardService.getStoredProcedure<SimpleResult[]>(`GetHistoryCount`, undefined)
-      .subscribe(simpleResults => {
-        this.totalRecords = 0;
-        if (simpleResults[0]) {
-          this.totalRecords = +simpleResults[0].Value;
-          this.onLazyLoad(this.lastLazyLoadEvent);
-        }
-      },
-        error => {
-          messageService.add({ severity: "error", summary: error, detail: error });
-        });
+    // this.dbStandardService.getStoredProcedure<SimpleResult[]>(`GetHistoryCount`, undefined)
+    //   .subscribe(simpleResults => {
+    //     this.totalRecords = 0;
+    //     if (simpleResults[0]) {
+    //       this.totalRecords = +simpleResults[0].Value;
+    //       this.onLazyLoad(this.lastLazyLoadEvent);
+    //     }
+    //   },
+    //     error => {
+    //       messageService.add({ severity: "error", summary: error, detail: error });
+    //     });
 
     this.cols = [
       { field: "ID", header: "ID" },
@@ -70,6 +70,7 @@ export class HistoryComponent implements OnInit, AfterViewInit {
     this.historiesSource = [];
     this.dbStandardService.getStoredProcedure<History[]>("GetHistory", aParams)
       .subscribe(histories => {
+        this.totalRecords = histories[0]["Total"];
         this.historiesSource = histories;
         this.onLazyLoad(this.lastLazyLoadEvent);
         this.toPage(this.page);

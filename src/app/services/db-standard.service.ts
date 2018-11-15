@@ -77,6 +77,24 @@ export class DBStandardService {
   //   };
   // }
 
+  getStoredProcedureS<T>(aStoredProcedure: string, aParams: string): Observable<T> {
+    if (aStoredProcedure) {
+      return this.http
+        .post<T>(`${this.storedProcedureUrl}[${aStoredProcedure}]`, { aParams })
+        .pipe(
+          tap(result => {
+            if (result["Key"] === "Error") {
+              this.router.navigate(["/login"]);
+              return new Observable<T>();
+            }
+          }),
+        // catchError(this.handleError("getStoredProcedure<T>", " TODO: "))
+      );
+    } else {
+      return new Observable<T>();
+    }
+  }
+
   getStoredProcedure<T>(aStoredProcedure: string, aParams: HttpParams): Observable<T> {
     if (aStoredProcedure) {
       return this.http

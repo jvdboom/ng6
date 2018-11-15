@@ -15,7 +15,8 @@
             [totalRecords]="this.totalRecords"
             [loading]="loading"
             (onPage)=onPage($event)
-            [(first)]="this.first">
+            [(first)]="this.first"
+            dataKey="ID">
             <ng-template pTemplate="caption">
                 {{ this.totalRecords }} History Records
             </ng-template>
